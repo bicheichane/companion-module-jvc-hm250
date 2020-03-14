@@ -1,11 +1,23 @@
 {
-  "name": "jvc-hm250",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+	"name": "jvc-hm250",
+	"version": "1.0.0",
+	"api_version": "1.0.0",
+	"keywords": [
+		"Camera",
+		"Camcorder"
+	],
+	"manufacturer": "JVC",
+	"product": "GY-HM250U",
+	"shortname": "JVC HM250",
+	"description": "JVC web API plugin for Companion",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Bernardo Pinho <bernardopinho@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"bluebird": "^3.7.2",
+		"urllib": "^2.34.2"
+	}
 }
