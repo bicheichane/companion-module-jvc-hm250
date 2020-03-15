@@ -136,9 +136,21 @@ class instance extends instance_skel {
 
 	processIncomingData(data) {
 		let resultObj = JSON.parse(data)
-		if(resultObj.Response['Requested'] === 'GetSystemInfo') {
-			this.setVariable('model', resultObj.Response.Data['Model'])
-			this.setVariable('serial', resultObj.Response.Data['Serial'])
+		switch(resultObj.Resposne['Requested'])
+		{
+			case 'GetSystemInfo':
+				this.setVariable('model', resultObj.Response.Data['Model'])
+				this.setVariable('serial', resultObj.Response.Data['Serial'])
+				break
+
+			case 'GetCamStatus':
+				this.setVariable('status', resultObj.Response.Data.Camera['Status'])
+			
+			case 'SetWebButtonEvent':
+			case 'SetCurrentStreamingServerID':
+			case 'SetZoomCtrl':
+				this.setVariable('result', resultObj.Response['Result'])
+			
 		}
 	}
 
@@ -174,7 +186,9 @@ class instance extends instance_skel {
 
 		var variables = [
 			{ name: 'model', label: 'Camera model' },
-			{ name: 'serial', label: 'Camera serial' }
+			{ name: 'serial', label: 'Camera serial' },
+			{ name: 'result', label: 'Result of requested operation'},
+			{ name: 'status', label: 'Camera recording status'}
 		]
 
 		this.setVariableDefinitions(variables)
