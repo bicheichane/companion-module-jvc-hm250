@@ -261,7 +261,41 @@ exports.getActions = function() {
 			}
 		]
 	}
+
+	//Set Streaming Server Event
+	actions['setStreamServerNumber'] = {
+		label: 'Recording',
+		options: [
+			{
+				label: 'Select value',
+				type: 'select2',
+				id: 'id',
+				default: 1,
+				choices: [
+					{ label: 'Server 1', id: 0 },
+					{ label: 'Server 2', id: 1 },
+					{ label: 'Server 3', id: 2 },
+					{ label: 'Server 4', id: 3 },
+				],
+				minChoicesForSearch: 0
+			}
 		]
+	}
+
+	//Set Zoom Position event
+	actions['setZoomCtrl'] = {
+		label: 'Set zoom position',
+		options: [{
+			label: 'postion (0-499)',
+			type: 'number',
+			id: 'position',
+			tooltip: 'Obeys preset zoom speed settings of the camera',
+			min: 0,
+			max: 499,
+			default: 350,
+			required: true,
+			range: false
+		}]
 	}
 
 	return actions
