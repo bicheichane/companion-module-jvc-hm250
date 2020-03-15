@@ -2,13 +2,13 @@ exports.getActions = function() {
 
 	let actions = {}
 
-	
-	actions['iris'] = {
+	//Web Button Events
+	actions['Iris'] = {
 		label: 'iris control',
 		options: [
 			{
 				label: 'Select value',
-				type: 'dropdown',
+				type: 'select2',
 				id: 'button',
 				default: 'Open1',
 				choices: [
@@ -21,17 +21,18 @@ exports.getActions = function() {
 					{ label: 'Close 2', id: 'Close2'},
 					{ label: 'Close 3', id: 'Close3'},
 					{ label: 'Push Auto', id: 'PushAuto'},
-				]
+				],
+				minChoicesForSearch: 0
 			}
 		]
 	}
 	
-	actions['gain'] = {
+	actions['Gain'] = {
 		label: 'Gain control',
 		options: [
 			{
 				label: 'Select value',
-				type: 'dropdown',
+				type: 'select2',
 				id: 'button',
 				default: '+1',
 				choices: [
@@ -41,7 +42,8 @@ exports.getActions = function() {
 					{ label: 'H Preset', id: 'H'},
 					{ label: '+1', id: 'Up1'},
 					{ label: '-1', id: 'Down1'}
-				]
+				],
+				minChoicesForSearch: 0
 			}
 		]
 	}
@@ -51,7 +53,7 @@ exports.getActions = function() {
 		options: [
 			{
 				label: 'Select value',
-				type: 'dropdown',
+				type: 'select2',
 				id: 'button',
 				default: '+1',
 				choices: [
@@ -59,7 +61,8 @@ exports.getActions = function() {
 					{ label: '-1', id: 'AeLevelDown'},
 					{ label: 'On', id: 'AdjustOn'},
 					{ label: 'Off', id: 'AdjustOff'}
-				]
+				],
+				minChoicesForSearch: 0
 			}
 		]
 	}
@@ -69,7 +72,7 @@ exports.getActions = function() {
 		options: [
 			{
 				label: 'Select value',
-				type: 'dropdown',
+				type: 'select2',
 				id: 'button',
 				default: 'Faster',
 				choices: [
@@ -78,7 +81,8 @@ exports.getActions = function() {
 					{ label: 'Eei', id: 'Eei'},
 					{ label: 'Slower', id: 'Slower'},
 					{ label: 'Faster', id: 'Faster'},
-				]
+				],
+				minChoicesForSearch: 0
 			}
 		]
 	}
@@ -88,7 +92,7 @@ exports.getActions = function() {
 		options: [
 			{
 				label: 'Select value',
-				type: 'dropdown',
+				type: 'select2',
 				id: 'button',
 				default: 'A',
 				choices: [
@@ -100,7 +104,8 @@ exports.getActions = function() {
 					{ label: 'WhPaintRM', id: 'WhPaintRM'},
 					{ label: 'WhPaintBP', id: 'WhPaintBP'},
 					{ label: 'WhPaintBM', id: 'WhPaintBM'},
-				]
+				],
+				minChoicesForSearch: 0
 			}
 		]
 	}
@@ -110,7 +115,7 @@ exports.getActions = function() {
 		options: [
 			{
 				label: 'Select value',
-				type: 'dropdown',
+				type: 'select2',
 				id: 'button',
 				default: 'Tele 1',
 				choices: [
@@ -120,7 +125,8 @@ exports.getActions = function() {
 					{ label: 'Out 1', id: 'Wide1'},
 					{ label: 'Out 2', id: 'Wide2'},
 					{ label: 'Out 3', id: 'Wide3'}
-				]
+				],
+				minChoicesForSearch: 0
 			}
 		]
 	}
@@ -130,7 +136,7 @@ exports.getActions = function() {
 		options: [
 			{
 				label: 'Select value',
-				type: 'dropdown',
+				type: 'select2',
 				id: 'button',
 				default: 'Far 1',
 				choices: [
@@ -143,7 +149,8 @@ exports.getActions = function() {
 					{ label: 'Near 1', id: 'Near1'},
 					{ label: 'Near 2', id: 'Near2'},
 					{ label: 'Near 3', id: 'Near3'}
-				]
+				],
+				minChoicesForSearch: 0
 			}
 		]
 	}
@@ -153,7 +160,7 @@ exports.getActions = function() {
 		options: [
 			{
 				label: 'Select value',
-				type: 'dropdown',
+				type: 'select2',
 				id: 'button',
 				default: 'Up 1',
 				choices: [
@@ -163,7 +170,8 @@ exports.getActions = function() {
 					{ label: 'Down 1', id: 'Down1'},
 					{ label: 'Down 2', id: 'Down2'},
 					{ label: 'Down 3', id: 'Down3'}
-				]
+				],
+				minChoicesForSearch: 0
 			}
 		]
 	}
@@ -173,7 +181,7 @@ exports.getActions = function() {
 		options: [
 			{
 				label: 'Select value',
-				type: 'dropdown',
+				type: 'select2',
 				id: 'button',
 				default: 'Button 1',
 				choices: [
@@ -187,7 +195,8 @@ exports.getActions = function() {
 					{ label: '7', id: 'Sw7'},
 					{ label: '8', id: 'Sw8'},
 					{ label: '9', id: 'Sw9'},
-				]
+				],
+				minChoicesForSearch: 0
 			}
 		]
 	}
@@ -197,13 +206,14 @@ exports.getActions = function() {
 		options: [
 			{
 				label: 'Select value',
-				type: 'dropdown',
+				type: 'select2',
 				id: 'button',
 				default: 'On',
 				choices: [
 					{ label: 'Off', id: 'Off'},
 					{ label: 'On', id: 'On'},
-				]
+				],
+				minChoicesForSearch: 0
 			}
 		]
 	}
@@ -213,7 +223,8 @@ exports.getActions = function() {
 		options: [
 			{
 				label: 'Select value',
-				type: 'dropdown',
+				tooltip: 'Up, Down, Left and Right events call assigned function when menu is closed',
+				type: 'select2',
 				id: 'button',
 				default: 'On',
 				choices: [
@@ -226,7 +237,8 @@ exports.getActions = function() {
 					{ label: 'Down', id: 'Down'},
 					{ label: 'Left', id: 'Left'},
 					{ label: 'Right', id: 'Right'},
-				]
+				],
+				minChoicesForSearch: 0
 			}
 		]
 	}
@@ -236,7 +248,7 @@ exports.getActions = function() {
 		options: [
 			{
 				label: 'Select value',
-				type: 'dropdown',
+				type: 'select2',
 				id: 'button',
 				default: 'On',
 				choices: [
@@ -244,8 +256,11 @@ exports.getActions = function() {
 					{ label: 'Stop', id: 'Stop'},
 					{ label: 'Up', id: 'Up'},
 					{ label: 'Down', id: 'Down'},
-				]
+				],
+				minChoicesForSearch: 0
 			}
+		]
+	}
 		]
 	}
 
