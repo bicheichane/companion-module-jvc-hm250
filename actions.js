@@ -37,7 +37,7 @@ exports.getActions = function() {
 				choices: [
 					{ label: 'Lolux', id: 'Lolux'},
 					{ label: 'L Preset', id: 'L'},
-					{ label: M Preset', id: 'M'},
+					{ label: 'M Preset', id: 'M'},
 					{ label: 'H Preset', id: 'H'},
 					{ label: '+1', id: 'Up1'},
 					{ label: '-1', id: 'Down1'}
@@ -71,7 +71,7 @@ exports.getActions = function() {
 				label: 'Select value',
 				type: 'dropdown',
 				id: 'button',
-				default: '',
+				default: 'Faster',
 				choices: [
 					{ label: 'Mode: Step', id: 'Step'},
 					{ label: 'Mode: Variable', id: 'Variable'},
@@ -83,111 +83,170 @@ exports.getActions = function() {
 		]
 	}
 
-	actions['zoom'] = {
+	actions['Whb'] = {
+		label: 'White Balance',
+		options: [
+			{
+				label: 'Select value',
+				type: 'dropdown',
+				id: 'button',
+				default: 'A',
+				choices: [
+					{ label: 'Preset', id: 'Preset'},
+					{ label: 'A', id: 'A'},
+					{ label: 'B', id: 'B'},
+					{ label: 'Adjust', id: 'Adjust'},
+					{ label: 'WhPaintRP', id: 'WhPaintRP'},
+					{ label: 'WhPaintRM', id: 'WhPaintRM'},
+					{ label: 'WhPaintBP', id: 'WhPaintBP'},
+					{ label: 'WhPaintBM', id: 'WhPaintBM'},
+				]
+			}
+		]
+	}
+
+	actions['Zoom'] = {
 		label: 'Zoom',
 		options: [
 			{
 				label: 'Select value',
 				type: 'dropdown',
 				id: 'button',
-				default: 'Stop',
+				default: 'Tele 1',
 				choices: [
-					{ label: 'Stop', id: 'Stop'},{ label: 'Tele1', id: 'Tele1'},{ label: 'Tele2', id: 'Tele2'},{ label: 'Tele3', id: 'Tele3'},{ label: 'Wide1', id: 'Wide1'},{ label: 'Wide2', id: 'Wide2'},{ label: 'Wide3', id: 'Wide3'}]
+					{ label: 'In 1', id: 'Tele1'},
+					{ label: 'In 2', id: 'Tele2'},
+					{ label: 'In 3', id: 'Tele3'},
+					{ label: 'Out 1', id: 'Wide1'},
+					{ label: 'Out 2', id: 'Wide2'},
+					{ label: 'Out 3', id: 'Wide3'}
+				]
 			}
 		]
 	}
 
-	actions['zoomSwitchOperation'] = {
-		label: 'Zoom switch',
-		options: [
-			{
-				label: 'Select value',
-				type: 'dropdown',
-				id: 'direction',
-				default: 'Stop',
-				choices: [{ label: 'Stop', id: 'Stop'},{ label: 'Tele', id: 'Tele'},{ label: 'Wide', id: 'Wide'}]
-			},
-			{
-				label: 'Speed (0-8)',
-				type: 'textinput',
-				id: 'speed',
-				default: '2',
-				regex: '/^[0-8]$/'
-			}
-		]
-	}
-
-	actions['focus'] = {
+	actions['Focus'] = {
 		label: 'Focus',
 		options: [
 			{
 				label: 'Select value',
 				type: 'dropdown',
 				id: 'button',
-				default: 'Stop',
-				choices: [{ label: 'Stop', id: 'Stop'},{ label: 'PushAuto', id: 'PushAuto'},{ label: 'Far1', id: 'Far1'},{ label: 'Far2', id: 'Far2'},{ label: 'Far3', id: 'Far3'},{ label: 'Near1', id: 'Near1'},{ label: 'Near2', id: 'Near2'},{ label: 'Near3', id: 'Near3'}]
+				default: 'Far 1',
+				choices: [
+					{ label: 'Auto', id: 'Auto'},
+					{ label: 'Manual', id: 'Manual'},
+					{ label: 'PushAuto', id: 'PushAuto'},
+					{ label: 'Far 1', id: 'Far1'},
+					{ label: 'Far 2', id: 'Far2'},
+					{ label: 'Far 3', id: 'Far3'},
+					{ label: 'Near 1', id: 'Near1'},
+					{ label: 'Near 2', id: 'Near2'},
+					{ label: 'Near 3', id: 'Near3'}
+				]
 			}
 		]
 	}
 
-
-
-	actions['whb'] = {
-		label: 'White balance control',
+	actions['MasterBlack'] = {
+		label: 'Master Black',
 		options: [
 			{
 				label: 'Select value',
 				type: 'dropdown',
 				id: 'button',
-				default: 'Awb',
-				choices: [{ label: 'Auto WB', id: 'Awb'},{ label: '3200K', id: '3200K'},{ label: '5600K', id: '5600K'},{ label: 'Manual', id: 'Manual'},{ label: 'Faw', id: 'Faw'}]
+				default: 'Up 1',
+				choices: [
+					{ label: 'Up 1', id: 'Up1'},
+					{ label: 'Up 2', id: 'Up2'},
+					{ label: 'Up 3', id: 'Up3'},
+					{ label: 'Down 1', id: 'Down1'},
+					{ label: 'Down 2', id: 'Down2'},
+					{ label: 'Down 3', id: 'Down3'}
+				]
 			}
 		]
 	}
 
-
-	actions['exposure'] = {
-		label: 'Exposure settings',
+	actions['User'] = {
+		label: 'User Buttons',
 		options: [
 			{
 				label: 'Select value',
 				type: 'dropdown',
 				id: 'button',
-				default: 'Manual',
-				choices: [{ label: 'Manual', id: 'Manual'},{ label: 'Auto', id: 'Auto'},{ label: 'IrisPriority', id: 'IrisPriority'},{ label: 'ShutterPriority', id: 'ShutterPriority'}]
+				default: 'Button 1',
+				choices: [
+					{ label: '0', id: 'Sw0'},
+					{ label: '1', id: 'Sw1'},
+					{ label: '2', id: 'Sw2'},
+					{ label: '3', id: 'Sw3'},
+					{ label: '4', id: 'Sw4'},
+					{ label: '5', id: 'Sw5'},
+					{ label: '6', id: 'Sw6'},
+					{ label: '7', id: 'Sw7'},
+					{ label: '8', id: 'Sw8'},
+					{ label: '9', id: 'Sw9'},
+				]
 			}
 		]
 	}
 
-	/***Extra options***/
-
-	actions['setZoomCtrl'] = {
-		label: 'Set zoom position',
-		options: [{
-			label: 'postion (0-499)',
-			type: 'textinput',
-			id: 'position',
-			default: '350',
-			regex: '/^([0-9]|[1-9][0-9]|[1-4][0-9][0-9])$/'
-		}]
+	actions['Disptv'] = {
+		label: 'Display Out',
+		options: [
+			{
+				label: 'Select value',
+				type: 'dropdown',
+				id: 'button',
+				default: 'On',
+				choices: [
+					{ label: 'Off', id: 'Off'},
+					{ label: 'On', id: 'On'},
+				]
+			}
+		]
 	}
 
-	actions['setPresetZoomPosition'] = {
-		label: 'Set preset zoom position in memory',
+	actions['Menu'] = {
+		label: 'Menu Navigation',
 		options: [
-		{
-			label: 'postion (A B C D)',
-			type: 'dropdown',
-			id: 'positionStore',
-			default: 'A',
-			choices: [{label:'A', id:'A'},{label:'B', id:'B'},{label:'C', id:'C'},{label:'D', id:'D'}]
-		},{
-			label: 'postion (0-499)',
-			type: 'textinput',
-			id: 'position',
-			default: '350',
-			regex: '/^([0-9]|[1-9][0-9]|[1-4][0-9][0-9])$/'
-		}]
+			{
+				label: 'Select value',
+				type: 'dropdown',
+				id: 'button',
+				default: 'On',
+				choices: [
+					{ label: 'Display', id: 'Display'},
+					{ label: 'Status', id: 'Status'},
+					{ label: 'Menu', id: 'Menu'},
+					{ label: 'Cancel', id: 'Cancel'},
+					{ label: 'Set', id: 'Set'},
+					{ label: 'Up', id: 'Up'},
+					{ label: 'Down', id: 'Down'},
+					{ label: 'Left', id: 'Left'},
+					{ label: 'Right', id: 'Right'},
+				]
+			}
+		]
+	}
+
+	actions['Rec'] = {
+		label: 'Recording',
+		options: [
+			{
+				label: 'Select value',
+				type: 'dropdown',
+				id: 'button',
+				default: 'On',
+				choices: [
+					{ label: 'Start', id: 'Start'},
+					{ label: 'Stop', id: 'Stop'},
+					{ label: 'Up', id: 'Up'},
+					{ label: 'Down', id: 'Down'},
+				]
+			}
+		]
 	}
 
 	return actions
