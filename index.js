@@ -80,68 +80,51 @@ class instance extends instance_skel {
 	action(action) {
 		let id = action.action;
 		let opt = action.options;
-		let jvcPTZObj = {}
+		let jvcCamObj = {}
 
 		switch (id){
 			case 'getCamStatus':
-				jvcPTZObj.Request = {"Command":"GetCamStatus","SessionID":this.sessionID}
-				break
-
-			case 'setGain':
-				jvcPTZObj.Request = {"Command":"Gain"}
+				jvcCamObj.Request = {"Command":"GetCamStatus","SessionID":this.sessionID}
 				break
 
 			case 'setZoomCtrl':
-				jvcPTZObj.Request = {"Command":"SetZoomCtrl","SessionID":this.sessionID,"Params":{"Position":opt.position}}
+				jvcCamObj.Request = {"Command":"SetZoomCtrl","SessionID":this.sessionID,"Params":{"Position":opt.position}}
 				break
 
-			case 'setPresetZoomPosition':
-				jvcPTZObj.Request = {"Command":"SetPresetZoomPosition","SessionID":this.sessionID,"Params":{"ID":opt.positionStore,"Position":opt.position}}
+			case 'setStreamServerNumber':
+				jvcCamObj.Request = {"Command":"SetCurrentStreamingServerID","SessionID":this.sessionID,"Params":{"ID":opt.id-1}}
 				break
 
-			case 'gain':
-				jvcPTZObj.Request = {"Command":"SetWebButtonEvent","SessionID":this.sessionID,"Params":{"Kind":"Gain","Button":opt.button}}
-				break
-
-			case 'whb':
-				jvcPTZObj.Request = {"Command":"SetWebButtonEvent","SessionID":this.sessionID,"Params":{"Kind":"Whb","Button":opt.button}}
-				break
-
-			case 'zoom':
-				jvcPTZObj.Request = {"Command":"SetWebButtonEvent","SessionID":this.sessionID,"Params":{"Kind":"Zoom","Button":opt.button}}
-				break
-
-			case 'focus':
-				jvcPTZObj.Request = {"Command":"SetWebButtonEvent","SessionID":this.sessionID,"Params":{"Kind":"Focus","Button":opt.button}}
-				break
-
-			case 'iris':
-				jvcPTZObj.Request = {"Command":"SetWebButtonEvent","SessionID":this.sessionID,"Params":{"Kind":"Iris","Button":opt.button}}
-				break
-
-			case 'exposure':
-				jvcPTZObj.Request = {"Command":"SetWebButtonEvent","SessionID":this.sessionID,"Params":{"Kind":"Exposure","Button":opt.button}}
-				break
-
-			case 'zoomSwitchOperation':
-				jvcPTZObj.Request = {"Command":"ZoomSwitchOperation","SessionID":this.sessionID,"Params":{"Direction":opt.direction,"Speed":opt.speed}}
+			case 'Iris':
+			case 'Gain':
+			case 'AeLevel':
+			case 'Shutter':
+			case 'Whb':
+			case 'Zoom':
+			case 'Focus':
+			case 'MasterBlack':
+			case 'User':
+			case 'Disptv':
+			case 'Menu':
+			case 'Rec':
+				jvcCamObj.Request = {"Command":"SetWebButtonEvent","SessionID":this.sessionID,"Params":{"Kind":id,"Button":opt.button}}
 				break
 		}
 
-		if(this.isEmpty(jvcPTZObj)){
+		if(this.isEmpty(jvcCamObj)){
 			this.system.emit('log','jvc', 'error','no command, array empty');
 		} else {
-			this.sendCommand(jvcPTZObj)
+			this.sendCommand(jvcCamObj)
 		}
 
 	}
-	sendCommand(jvcPTZObj) {
+	sendCommand(jvcCamObj) {
 		urllib.request(this.config.host + '/cgi-bin/api.cgi',{
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			content: JSON.stringify(jvcPTZObj)
+			content: JSON.stringify(jvcCamObj)
 		}).then((result) => {
 			// result: {data: buffer, res: response object}
 			let resObj = result.res.data
