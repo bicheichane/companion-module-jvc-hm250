@@ -2,6 +2,87 @@ exports.getActions = function() {
 
 	let actions = {}
 
+	
+	actions['iris'] = {
+		label: 'iris control',
+		options: [
+			{
+				label: 'Select value',
+				type: 'dropdown',
+				id: 'button',
+				default: 'Open1',
+				choices: [
+					{ label: 'Manual', id: 'Manual'},
+					{ label: 'Auto', id: 'Auto'},
+					{ label: 'Open 1', id: 'Open1'},
+					{ label: 'Open 2', id: 'Open2'},
+					{ label: 'Open 3', id: 'Open3'},
+					{ label: 'Close 1', id: 'Close1'},
+					{ label: 'Close 2', id: 'Close2'},
+					{ label: 'Close 3', id: 'Close3'},
+					{ label: 'Push Auto', id: 'PushAuto'},
+				]
+			}
+		]
+	}
+	
+	actions['gain'] = {
+		label: 'Gain control',
+		options: [
+			{
+				label: 'Select value',
+				type: 'dropdown',
+				id: 'button',
+				default: '+1',
+				choices: [
+					{ label: 'Lolux', id: 'Lolux'},
+					{ label: 'L Preset', id: 'L'},
+					{ label: M Preset', id: 'M'},
+					{ label: 'H Preset', id: 'H'},
+					{ label: '+1', id: 'Up1'},
+					{ label: '-1', id: 'Down1'}
+				]
+			}
+		]
+	}
+	
+	actions['AeLevel'] = {
+		label: 'Auto Exposure Level',
+		options: [
+			{
+				label: 'Select value',
+				type: 'dropdown',
+				id: 'button',
+				default: '+1',
+				choices: [
+					{ label: '+1', id: 'AeLevelUp'},
+					{ label: '-1', id: 'AeLevelDown'},
+					{ label: 'On', id: 'AdjustOn'},
+					{ label: 'Off', id: 'AdjustOff'}
+				]
+			}
+		]
+	}
+	
+	actions['Shutter'] = {
+		label: 'Shutter',
+		options: [
+			{
+				label: 'Select value',
+				type: 'dropdown',
+				id: 'button',
+				default: '',
+				choices: [
+					{ label: 'Mode: Step', id: 'Step'},
+					{ label: 'Mode: Variable', id: 'Variable'},
+					{ label: 'Eei', id: 'Eei'},
+					{ label: 'Slower', id: 'Slower'},
+					{ label: 'Faster', id: 'Faster'},
+				]
+			}
+		]
+	}
+
 	actions['zoom'] = {
 		label: 'Zoom',
 		options: [
@@ -10,7 +91,8 @@ exports.getActions = function() {
 				type: 'dropdown',
 				id: 'button',
 				default: 'Stop',
-				choices: [{ label: 'Stop', id: 'Stop'},{ label: 'Tele1', id: 'Tele1'},{ label: 'Tele2', id: 'Tele2'},{ label: 'Tele3', id: 'Tele3'},{ label: 'Wide1', id: 'Wide1'},{ label: 'Wide2', id: 'Wide2'},{ label: 'Wide3', id: 'Wide3'}]
+				choices: [
+					{ label: 'Stop', id: 'Stop'},{ label: 'Tele1', id: 'Tele1'},{ label: 'Tele2', id: 'Tele2'},{ label: 'Tele3', id: 'Tele3'},{ label: 'Wide1', id: 'Wide1'},{ label: 'Wide2', id: 'Wide2'},{ label: 'Wide3', id: 'Wide3'}]
 			}
 		]
 	}
@@ -48,18 +130,7 @@ exports.getActions = function() {
 		]
 	}
 
-	actions['gain'] = {
-		label: 'Gain control',
-		options: [
-			{
-				label: 'Select value',
-				type: 'dropdown',
-				id: 'button',
-				default: 'M',
-				choices: [{ label: '+1', id: 'Up1'},{ label: '-1', id: 'Down1'}]
-			}
-		]
-	}
+
 
 	actions['whb'] = {
 		label: 'White balance control',
@@ -74,18 +145,6 @@ exports.getActions = function() {
 		]
 	}
 
-	actions['iris'] = {
-		label: 'iris control',
-		options: [
-			{
-				label: 'Select value',
-				type: 'dropdown',
-				id: 'button',
-				default: 'Open1',
-				choices: [{ label: 'Open 1', id: 'Open1'},{ label: 'Close 1', id: 'Close1'}]
-			}
-		]
-	}
 
 	actions['exposure'] = {
 		label: 'Exposure settings',

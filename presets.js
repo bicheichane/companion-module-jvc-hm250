@@ -4,7 +4,7 @@ exports.getPresets = function() {
 	// Stealth Toggle
 	presets.push({
 		category: 'Pan/Tilt',
-		label: 'Pan left',
+		label: 'Pan left',6
 		bank: {
 			style: 'text',
 			text: 'Pan left, speed 15',
